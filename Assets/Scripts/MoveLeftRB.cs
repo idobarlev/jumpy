@@ -4,16 +4,26 @@ using UnityEngine;
 
 public class MoveLeftRB : MonoBehaviour
 {
-    // -- DM --
+    #region DM
     public float speed = 4.0f;
+    public float speedIncreasingFactor = 1.02f;  // how much to inc speed.
+    public float speedIncreasingTime = 6f;      // when to inc speed.
     private Rigidbody2D rb;
     private Vector2 screenBounds;
+    #endregion
 
     // Use this for initialization
     void Start()
     {
+        // Increase rb object speed.
+        if (speedIncreasingFactor != 0)
+        {
+            speed = (speed * Mathf.Pow(speedIncreasingFactor, (int)(Time.time / speedIncreasingTime)));
+        }
+       
         rb = this.GetComponent<Rigidbody2D>();
         rb.velocity = new Vector2(-speed, 0);
+        //rb.velocity = new Vector2(-12, 0);
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
     }
 

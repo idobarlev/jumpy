@@ -136,6 +136,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
+  speedIncreasingFactor: 1.05
+  speedIncreasingTime: 6
 --- !u!114 &6314509920636810362
 MonoBehaviour:
   m_ObjectHideFlags: 0

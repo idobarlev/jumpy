@@ -5,10 +5,11 @@ using Utils;
 
 public class PlayerLogic : MonoSingleton<PlayerLogic>
 {
+    #region DM
     public int maxHealth;
     public int currentHealth;
-
     public HealthBar healthBar;
+    #endregion
 
     // Start is called before the first frame update
     void Start()
