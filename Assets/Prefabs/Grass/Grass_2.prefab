@@ -282,7 +282,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
-  speedIncreasingFactor: 1.05
+  speedIncreasingFactor: 1.02
   speedIncreasingTime: 6
 --- !u!1 &4603248440940762515
 GameObject:

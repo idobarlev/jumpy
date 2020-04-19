@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
-  speedIncreasingFactor: 1.05
+  speedIncreasingFactor: 1.02
   speedIncreasingTime: 6
 --- !u!114 &3666828065402909869
 MonoBehaviour:
@@ -163,5 +163,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e223759b04425934dae9fad8dc0074f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 10
+  _damage: 14
   _cooldownTime: 1
