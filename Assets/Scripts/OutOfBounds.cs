@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Damaging : MonoBehaviour
+public class OutOfBounds : MonoBehaviour
 {
     #region DM
-    public int _damage;
-    public float _cooldownTime = 1f;
+    public float _cooldownTime = 5f;
     private bool _isOnCooldown = false;
     #endregion
 
@@ -15,7 +14,7 @@ public class Damaging : MonoBehaviour
 
         // On trigger event with player.
         if (col.gameObject == PlayerLogic.Instance.gameObject && !_isOnCooldown) {
-            PlayerLogic.Instance.TakeDamage(_damage);
+            GameManager.Instance.GameOver();
             _isOnCooldown = true;
             StartCoroutine(Cooldown());
         }

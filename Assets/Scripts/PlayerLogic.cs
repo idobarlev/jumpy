@@ -9,26 +9,29 @@ public class PlayerLogic : MonoSingleton<PlayerLogic>
     public int maxHealth;
     public int currentHealth;
     public HealthBar healthBar;
+    public bool isPlayerOutBound;
     #endregion
 
     // Start is called before the first frame update
-    void Start()
-    {
-        maxHealth = 100;
-        currentHealth = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+    void Start() {
+        init();
     }
 
     // Set damage on hp bar & dec on character hp.
-    public void TakeDamage(int damage)
-    {
+    public void TakeDamage(int damage) {
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
+
+        if (currentHealth < 1) {
+            GameManager.Instance.GameOver();
+        }
+    }
+
+    // Init player for game.
+    public void init() {
+        isPlayerOutBound = false;
+        maxHealth = 100;
+        currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
     }
 }

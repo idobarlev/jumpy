@@ -16,7 +16,6 @@ public class HealthBar : MonoBehaviour
         slider.value = health;
 
         fill.color = gradient.Evaluate(1f);
-        Debug.Log(fill.color);
     }
 
     // Update health on slider.

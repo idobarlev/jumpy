@@ -10,14 +10,16 @@ public class ScoreText : MonoBehaviour
     public Text highScoreText;      // high score text in UI.
 
     public float pointsPerSec = 4f;
-    public bool isIncreasing = false;
-    private float _score = 0;
-    private float _highScore = 0;
+    public static bool isIncreasing = false;
+    public static bool isHighScore;
+    private static float _score = 0;
+    private static float _highScore = 0;
     #endregion
 
     // Start is called before the first frame update
     void Start()
     {
+        isHighScore = false;
         scoreText.text = "" + Score + "";   // update coins text.
     }
 
@@ -32,6 +34,7 @@ public class ScoreText : MonoBehaviour
         if (Score > HighScore)
         {
             HighScore = Score;
+            isHighScore = true;
         }
 
         scoreText.text = "" + Mathf.Round(Score) + "";   // update score text.
@@ -39,7 +42,7 @@ public class ScoreText : MonoBehaviour
     }
 
     #region Get & Set
-    public float Score { get => _score; set => _score = value; }
-    public float HighScore { get => _highScore; set => _highScore = value; }
+    public static float Score { get => _score; set => _score = value; }
+    public static float HighScore { get => _highScore; set => _highScore = value; }
     #endregion
 }
